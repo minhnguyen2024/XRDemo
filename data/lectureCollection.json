@@ -1,0 +1,46 @@
+{
+  "lectureCollection": [
+    {
+      "lectureID": "lecture1",
+      "lectureTitle": "Addtion",
+      "lectureContent": "This is Addition",
+      "id": 1
+    },
+    {
+      "lectureID": "day1",
+      "lectureTitle": "Subtraction",
+      "lectureContent": "This is Subtraction",
+      "id": 2
+    },
+    {
+      "lectureID": "day2",
+      "lectureTitle": "Subtraction with Fractions",
+      "lectureContent": "This is Subtraction with Fractions",
+      "id": 3
+    },
+    {
+      "lectureID": "day3",
+      "lectureTitle": "Multiplication",
+      "lectureContent": "This is Multiplication",
+      "id": 4
+    },
+    {
+      "lectureID": "day4",
+      "lectureTitle": "Division",
+      "lectureContent": "This is Division",
+      "id": 5
+    },
+    {
+      "lectureID": "day5",
+      "lectureTitle": "Division",
+      "lectureContent": "This is Division",
+      "id": 6
+    },
+    {
+      "lectureID": "day6",
+      "lectureTitle": "Fraction Review",
+      "lectureContent": "This is Fraction Review",
+      "id": 7
+    }
+  ]
+}

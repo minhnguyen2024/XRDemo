@@ -1,0 +1,46 @@
+{
+  "notes": [
+    {
+      "title": "editted title 1",
+      "details": "editted details",
+      "category": "money",
+      "id": 1
+    },
+    {
+      "title": "goodbye",
+      "details": "This is Hello",
+      "category": "reminders",
+      "id": 2
+    },
+    {
+      "title": "kldl;wd;l",
+      "details": "asdasdsad",
+      "category": "reminders",
+      "id": 3
+    },
+    {
+      "title": "editted title 3",
+      "details": "editted details 2",
+      "category": "money",
+      "id": 4
+    },
+    {
+      "title": "jdskjfjksdf",
+      "details": "sdfdffgdfg",
+      "category": "reminders",
+      "id": 5
+    },
+    {
+      "title": "editted title 3",
+      "details": "editted details 2",
+      "category": "money",
+      "id": 6
+    },
+    {
+      "title": "today",
+      "details": "today's details",
+      "category": "money",
+      "id": 7
+    }
+  ]
+}

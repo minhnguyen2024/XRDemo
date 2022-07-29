@@ -1,0 +1,56 @@
+{
+  "quizColection": [
+    {
+      "quizID": "quiz1",
+      "quizQuestion": "What is the color of the sky?",
+      "potentialAnswers": [
+        "Red",
+        "Yellow",
+        "Blue",
+        "Green"
+      ],
+      "correctAnswer": "Blue",
+      "indexOfCorrectanswer": 2,
+      "id": 1
+    },
+    {
+      "quizID": "quiz2",
+      "quizQuestion": "What is the color of the sun?",
+      "potentialAnswers": [
+        "Gray",
+        "Yellow",
+        "Blue",
+        "Green"
+      ],
+      "correctAnswer": "Yellow",
+      "indexOfCorrectanswer": 1,
+      "id": 2
+    },
+    {
+      "quizID": "day1",
+      "quizQuestion": "What is addition",
+      "potentialAnswers": [
+        "add",
+        "subtract",
+        "divide",
+        "multiply"
+      ],
+      "correctAnswer": "add",
+      "indexOfCorrectanswer": 0,
+      "id": 3
+    },
+    {
+      "quizID": "quiz1",
+      "quizQuestion": "What is division",
+      "potentialAnswers": [
+        "add",
+        "divide",
+        "subtract",
+        "plus"
+      ],
+      "correctAnswer": "divide",
+      "indexOfCorrectanswer": 0,
+      "id": 4
+    }
+  ]
+}
