@@ -6,6 +6,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { Input } from '@mui/material';
 
 
 const EditLecture =(props)=>{
@@ -14,109 +15,148 @@ const EditLecture =(props)=>{
         fetch('http://localhost:8003/lectureCollection').then(res => res.json()).then(data => setLectures(data))
     }, [])
 
+    const [editID, setEditID] = useState('')
+    const [editTitle, setEditTitle] = useState('')
+    const [editContent, setEditContent] = useState('')
+    
 
     const [wantedID, setWantedID] = useState('')
-
-
     const [searchValue, setSearchValue] = useState('')
 
-    const filteredLectures = lectures.filter((lecture) =>{
-        return lecture.lectureID.includes(searchValue)
-    })
+    const [wantedLectures, setWantedLectures] = useState([])
+    const [wantedLecture, setWantedLecture] = useState({})
 
     const shouldDisplayButton = searchValue.length > 0;
 
-    const handleClearClick = () =>{
-        setSearchValue("")
-    }
-
-    // const wantedID = 'day1'
-    var wantedLecture = {}
     
 
-    console.log(lectures)
-    for(let i = 0; i < lectures.length; i++){
-        if (lectures[i].lectureID == wantedID){
-            wantedLecture = lectures[i]
-        }
+    const [id, setID] = useState('')
+    
+    
+
+    const handleWantedIDChange = (event) =>{
+        setWantedID(event.target.value)
     }
 
-    console.log(wantedLecture)
-    console.log(wantedLecture.lectureTitle)
+    const handleWantedIDSubmit = (event) =>{
+        event.preventDefault();
+        console.log("wantedID ", wantedID)
 
-    const handleSearchValueChange = (event) =>{
-        setSearchValue(event.target.value)
+        var temp = lectures.filter((lecture) =>{
+            // console.log(lecture.lectureID)
+            // console.log("wantedID ",wantedID)
+            return lecture.lectureID.includes(wantedID)
+        })
+
+        console.log("temp ",temp)
+
+        setWantedLectures(temp)
+
+        setWantedLecture(wantedLectures[0])
+        // console.log("wantedLectures ",wantedLectures)
+        // console.log("wantedLecture ",wantedLecture)
+        // setID(wantedID)
+    }
+
+
+    const handleClearClick = (event) =>{
+        event.preventDefault();
+        setWantedID("")
+    }
+
+    const handleEditIDChange = (event) =>{
+        setEditID(event.target.value)
+    }
+
+    const handleEditContentChange = (event) =>{
+        setEditContent(event.target.value)
+    }
+
+    const handleEditTitleChange = (event) =>{
+        setEditTitle(event.target.value)
+    }
+
+    const handleEditSubmit = (event) =>{
+        event.preventDefault()
+        console.log("handleEditSubmit wantedLecture[0]", wantedLectures[0])
+        console.log("id ", wantedLectures[0].id)
+        
+        var lectureID = editID
+        var lectureTitle = editTitle
+        var lectureContent = editContent
+        var url = 'http://localhost:8003/lectureCollection/' + id
+
+        fetch(url,{
+            method: "PUT",
+            headers: {"Content-type": "application/json"},
+            body:JSON.stringify({ 
+                lectureID,
+                lectureTitle,
+                lectureContent,  
+            })
+          })
     }
 
     return (<div>
         <h1>Edit Lecture</h1>
-     
-        <input type='text' onChange={handleSearchValueChange} value={searchValue}></input>
+
+        <form onSubmit={handleWantedIDSubmit}>
+            <input type='text' onChange={handleWantedIDChange} placeholder="Search by ID" value={wantedID}></input>
+            <button>Submit</button>
+        </form>
+
+        {console.log("returned wantedLectures ", wantedLectures)}
+        {console.log("returned wantedLecture[0]", wantedLectures[0])}
+
+        {/* {console.log("returned wantedLecture ", wantedLecture)} */}
+
         {shouldDisplayButton && <button onClick={handleClearClick}>Clear</button>}
-       
         {
-            filteredLectures.map((lecture)=>{
-                return (
-                    <Card style={{ width: '40rem' }}>
-                        <Card.Body>
-                            <Card.Subtitle>{lecture.lectureID}</Card.Subtitle>
-                            <Accordion> 
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>{lecture.lectureTitle}</Accordion.Header>
-                                    <Accordion.Body>
-                                        {lecture.lectureContent}
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>        
-                        </Card.Body>
-                    </Card>
+            wantedLectures.map((wantedLecture) =>{
+                return (<div>
+                    <input value={wantedLecture.lectureID} onChange={handleWantedIDChange}></input>
+
+                    <h2>{wantedLecture.lectureID}</h2>
+                    <h2>{wantedLecture.lectureTitle}</h2>
+                    <p>{wantedLecture.lectureContent}</p>
+
+                </div>)
                 
-                )
             })
         }
 
 
-
- 
-
-            
-
-        
+       
+        <form onSubmit={handleEditSubmit}>
+                <input type='text' onChange={handleEditIDChange} placeholder='Edit ID'></input><br/>
+                <input type='text' onChange={handleEditTitleChange} placeholder="Edit Title"></input><br/>
+                <textarea type='text' onChange={handleEditContentChange} placeholder="Edit Content"></textarea><br/>
+                <button type='submit'>Save Edit</button><br/>
+        </form>
+     
     </div>)
 }
 
 
 export default EditLecture
-{/* <Row xs={1} md={2} className="g-4">
-                    {Array.from({ length: 4 }).map((_, idx) => (
-                        <Col></Col>
-                        </Col>
-        ))}
-
-</Row> */}
 
 
-
-{/* <form onSubmit={handleSearchLectureSubmit}>
-            <input type='text' 
-            placeholder='enter LectureID'
-            onChange={handleSearchLectureChange}
-            >
-            </input>
-            <Button type='submit'>Search</Button>
-        </form> */}
-
-
-        // const handleSearchLectureChange = (event) =>{
-    //     setWantedID(event.target.value)
-    // }
-    // const handleSearchLectureSubmit = (event) =>{
-    //     event.preventDefault()
-
-    // }
-
-// <ul key ={lecture.id}>
-                    //     <li key={lecture.lectureID}> {lecture.lectureID}</li>
-                    //     <li key={lecture.lectureTitle}> {lecture.lectureTitle}</li>
-
-                    // </ul>
+// {
+//     filteredLectures.map((lecture)=>{
+//         return (
+//             <Card style={{ width: '40rem' }}>
+//                 <Card.Body>
+//                     <Card.Subtitle>{lecture.lectureID}</Card.Subtitle>
+//                     <Accordion> 
+//                         <Accordion.Item eventKey="0">
+//                             <Accordion.Header>{lecture.lectureTitle}</Accordion.Header>
+//                             <Accordion.Body>
+//                                 {lecture.lectureContent}
+//                             </Accordion.Body>
+//                         </Accordion.Item>
+//                     </Accordion>        
+//                 </Card.Body>
+//             </Card>
+//         )
+//     })
+// }

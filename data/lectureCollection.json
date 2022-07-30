@@ -1,18 +1,6 @@
 {
   "lectureCollection": [
     {
-      "lectureID": "lecture1",
-      "lectureTitle": "Addtion",
-      "lectureContent": "This is Addition",
-      "id": 1
-    },
-    {
-      "lectureID": "day1",
-      "lectureTitle": "Subtraction",
-      "lectureContent": "This is Subtraction",
-      "id": 2
-    },
-    {
       "lectureID": "day2",
       "lectureTitle": "Subtraction with Fractions",
       "lectureContent": "This is Subtraction with Fractions",
@@ -41,6 +29,12 @@
       "lectureTitle": "Fraction Review",
       "lectureContent": "This is Fraction Review",
       "id": 7
+    },
+    {
+      "lectureID": "day7",
+      "lectureTitle": "Test",
+      "lectureContent": "This is Test",
+      "id": 8
     }
   ]
 }

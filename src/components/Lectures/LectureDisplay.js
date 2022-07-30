@@ -11,6 +11,7 @@ const LectureDisplay = (props) =>{
         fetch('http://localhost:8003/lectureCollection').then(res => res.json()).then(data => setLectures(data))
     }, [])
 
+    console.log("lectures", lectures)
 
     const [wantedID, setWantedID] = useState('')
 
@@ -57,6 +58,8 @@ const LectureDisplay = (props) =>{
                     <Card style={{ width: '40rem' }}>
                         <Card.Body>
                             <Card.Subtitle>{lecture.lectureID}</Card.Subtitle>
+                            <Card.Subtitle>EditID: {lecture.id}</Card.Subtitle>
+
                             <Accordion> 
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>{lecture.lectureTitle}</Accordion.Header>
