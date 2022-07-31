@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import ReactDisplayQuiz from './ReactDisplayQuiz'
-import ReactQuizForm from './ReactQuizForm'
 
 const QuizContainer = () =>{
     const [quizzes, setQuizzes] = useState([])

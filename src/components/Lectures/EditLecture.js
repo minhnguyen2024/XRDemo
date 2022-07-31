@@ -1,18 +1,12 @@
-import { Button } from 'bootstrap'
+
 import React, {useState, useEffect} from 'react'
-import Card from 'react-bootstrap/Card';
 
-import Accordion from 'react-bootstrap/Accordion';
-
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import { Input } from '@mui/material';
 
 
 const EditLecture =(props)=>{
     const[lectures, setLectures] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:8003/lectureCollection').then(res => res.json()).then(data => setLectures(data))
+        fetch('http://localhost:8004/lectureCollection').then(res => res.json()).then(data => setLectures(data))
     }, [])
 
     const [editID, setEditID] = useState('')
@@ -28,11 +22,7 @@ const EditLecture =(props)=>{
 
     const shouldDisplayButton = searchValue.length > 0;
 
-    
-
     const [id, setID] = useState('')
-    
-    
 
     const handleWantedIDChange = (event) =>{
         setWantedID(event.target.value)
@@ -78,13 +68,16 @@ const EditLecture =(props)=>{
 
     const handleEditSubmit = (event) =>{
         event.preventDefault()
-        console.log("handleEditSubmit wantedLecture[0]", wantedLectures[0])
-        console.log("id ", wantedLectures[0].id)
-        
-        var lectureID = editID
+
+        var id = wantedLectures[0].id
+
+        let lectureToBeEditted = wantedLectures[0]
+ 
+        var lectureID = lectureToBeEditted.lectureID
+        console.log("editID", lectureID)
         var lectureTitle = editTitle
         var lectureContent = editContent
-        var url = 'http://localhost:8003/lectureCollection/' + id
+        var url = 'http://localhost:8004/lectureCollection/' + id
 
         fetch(url,{
             method: "PUT",
@@ -105,11 +98,6 @@ const EditLecture =(props)=>{
             <button>Submit</button>
         </form>
 
-        {console.log("returned wantedLectures ", wantedLectures)}
-        {console.log("returned wantedLecture[0]", wantedLectures[0])}
-
-        {/* {console.log("returned wantedLecture ", wantedLecture)} */}
-
         {shouldDisplayButton && <button onClick={handleClearClick}>Clear</button>}
         {
             wantedLectures.map((wantedLecture) =>{
@@ -128,7 +116,7 @@ const EditLecture =(props)=>{
 
        
         <form onSubmit={handleEditSubmit}>
-                <input type='text' onChange={handleEditIDChange} placeholder='Edit ID'></input><br/>
+                {/* <input type='text' onChange={handleEditIDChange} placeholder='Edit ID'></input><br/> */}
                 <input type='text' onChange={handleEditTitleChange} placeholder="Edit Title"></input><br/>
                 <textarea type='text' onChange={handleEditContentChange} placeholder="Edit Content"></textarea><br/>
                 <button type='submit'>Save Edit</button><br/>
@@ -140,23 +128,3 @@ const EditLecture =(props)=>{
 
 export default EditLecture
 
-
-// {
-//     filteredLectures.map((lecture)=>{
-//         return (
-//             <Card style={{ width: '40rem' }}>
-//                 <Card.Body>
-//                     <Card.Subtitle>{lecture.lectureID}</Card.Subtitle>
-//                     <Accordion> 
-//                         <Accordion.Item eventKey="0">
-//                             <Accordion.Header>{lecture.lectureTitle}</Accordion.Header>
-//                             <Accordion.Body>
-//                                 {lecture.lectureContent}
-//                             </Accordion.Body>
-//                         </Accordion.Item>
-//                     </Accordion>        
-//                 </Card.Body>
-//             </Card>
-//         )
-//     })
-// }

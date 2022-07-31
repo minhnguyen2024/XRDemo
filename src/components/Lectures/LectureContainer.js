@@ -6,7 +6,7 @@ const LectureContainer = () =>{
 
     const[lectures, setLectures] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:8003/lectureCollection').then(res => res.json()).then(data => setLectures(data))
+        fetch('http://localhost:8004/lectureCollection').then(res => res.json()).then(data => setLectures(data))
     }, [])
 
     return <div>

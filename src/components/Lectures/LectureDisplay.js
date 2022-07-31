@@ -1,14 +1,13 @@
 import React ,  {useState, useEffect} from 'react'
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
 import Accordion from 'react-bootstrap/Accordion';
+import '../Lectures/Lectures.css'
 
 
 const LectureDisplay = (props) =>{
     const[lectures, setLectures] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:8003/lectureCollection').then(res => res.json()).then(data => setLectures(data))
+        fetch('http://localhost:8004/lectureCollection').then(res => res.json()).then(data => setLectures(data))
     }, [])
 
     console.log("lectures", lectures)
@@ -28,20 +27,6 @@ const LectureDisplay = (props) =>{
         setSearchValue("")
     }
 
-    // const wantedID = 'day1'
-    var wantedLecture = {}
-    
-
-    console.log(lectures)
-    for(let i = 0; i < lectures.length; i++){
-        if (lectures[i].lectureID == wantedID){
-            wantedLecture = lectures[i]
-        }
-    }
-
-    console.log(wantedLecture)
-    console.log(wantedLecture.lectureTitle)
-
     const handleSearchValueChange = (event) =>{
         setSearchValue(event.target.value)
     }
@@ -55,11 +40,18 @@ const LectureDisplay = (props) =>{
         {
             filteredLectures.map((lecture)=>{
                 return (
-                    <Card style={{ width: '40rem' }}>
+                    <Card style={{ width: '40rem' }} className="card">
                         <Card.Body>
-                            <Card.Subtitle>{lecture.lectureID}</Card.Subtitle>
-                            <Card.Subtitle>EditID: {lecture.id}</Card.Subtitle>
-
+                            <Card.Subtitle>
+                                <p>{lecture.lectureID}</p>
+                                <p className='editID'>EditID: {lecture.id}</p>
+                                <p style="text-align:left;">
+                                    This text is left aligned
+                                    <span style="float:right;">
+                                        This text is right aligned
+                                    </span>
+                                </p>
+                            </Card.Subtitle>
                             <Accordion> 
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>{lecture.lectureTitle}</Accordion.Header>
@@ -78,33 +70,3 @@ const LectureDisplay = (props) =>{
 
 }
 export default LectureDisplay
-
-     // <div>
-            //     <h2>Title: {lecture.lectureTitle}</h2><br/>
-            //     <h3>Lecture ID: {lecture.lectureID}</h3><br/>
-            //     <p>Content: {lecture.lectureContent}</p><br/>
-            // </div>
-            // const handleButtonSubmit = (event) =>{
-            //     event.preventDefault()
-        
-            // }
-        
-            // return <div>
-            //     {props.lectures.map(lecture =>(
-            //         <Card style={{ width: '18rem' }}>
-            //         <Card.Body>
-            //             <Card.Title>{lecture.lectureTitle}</Card.Title>
-            //             <Card.Text>
-            //                 {lecture.lectureContent}
-            //             </Card.Text>
-            //             <Card.Subtitle>{lecture.lectureID}</Card.Subtitle>
-        
-            //             <form onSubmit={handleButtonSubmit}>
-            //                 <Nav.Link href='/single-lecture-display' wantedID={lecture.lectureID}>Go to Lecture</Nav.Link>
-            //                 {/* <Button className='btn btn-primary'>Go to Lecture</Button> */}
-            //             </form>
-                        
-            //         </Card.Body>
-            //     </Card>)
-            //     )}
-            // </div>

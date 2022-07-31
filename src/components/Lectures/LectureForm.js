@@ -47,7 +47,7 @@ class LectureForm extends React.Component{
         var lectureID = this.state.lectureID
         var lectureTitle = this.state.lectureTitle
         var lectureContent = this.state.lectureContent
-        fetch('http://localhost:8003/lectureCollection',{
+        fetch('http://localhost:8004/lectureCollection',{
           method: "POST",
           headers: {"Content-type": "application/json"},
           body:JSON.stringify({ 

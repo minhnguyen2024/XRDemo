@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import Lectures from '../../pages/Lectures'
-import { useSearchParams } from 'react-router-dom'
+// import Lectures from '../../pages/Lectures'
+// import { useSearchParams } from 'react-router-dom'
 
 const SingleLectureDisplay =(props)=>{
     const[lectures, setLectures] = useState([])

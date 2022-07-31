@@ -8,14 +8,14 @@
     },
     {
       "lectureID": "day3",
-      "lectureTitle": "Multiplication",
-      "lectureContent": "This is Multiplication",
+      "lectureTitle": "edit",
+      "lectureContent": "editted",
       "id": 4
     },
     {
       "lectureID": "day4",
-      "lectureTitle": "Division",
-      "lectureContent": "This is Division",
+      "lectureTitle": "Edited Division",
+      "lectureContent": "This is edited division",
       "id": 5
     },
     {
