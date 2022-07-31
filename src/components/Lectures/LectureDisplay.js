@@ -7,7 +7,7 @@ import '../Lectures/Lectures.css'
 const LectureDisplay = (props) =>{
     const[lectures, setLectures] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:8004/lectureCollection').then(res => res.json()).then(data => setLectures(data))
+        fetch('http://localhost:8004/lectureCollection/').then(res => res.json()).then(data => setLectures(data))
     }, [])
 
     console.log("lectures", lectures)
@@ -40,17 +40,12 @@ const LectureDisplay = (props) =>{
         {
             filteredLectures.map((lecture)=>{
                 return (
-                    <Card style={{ width: '40rem' }} className="card">
+                    <Card style={{ width: '40rem' }} className="card" key={lecture.id}>
                         <Card.Body>
                             <Card.Subtitle>
                                 <p>{lecture.lectureID}</p>
                                 <p className='editID'>EditID: {lecture.id}</p>
-                                <p style="text-align:left;">
-                                    This text is left aligned
-                                    <span style="float:right;">
-                                        This text is right aligned
-                                    </span>
-                                </p>
+                    
                             </Card.Subtitle>
                             <Accordion> 
                                 <Accordion.Item eventKey="0">
@@ -62,7 +57,6 @@ const LectureDisplay = (props) =>{
                             </Accordion>        
                         </Card.Body>
                     </Card>
-                
                 )
             })
         }

@@ -13,24 +13,23 @@ import EditLecture from './components/Lectures/EditLecture';
 function App() {
 
     return (
-   
-      <div className="App">
-            {/* <Navbar/> */}
-            <ReactBootstrapNavbar/>
-
-
-
-            <Routes>
-            <Route path='/home' element={<Home/>}></Route>
-            <Route path='/lectures-create' element={<LectureForm/>}></Route>
-            <Route path='/lectures-display' element={<Lectures/>}></Route>
-            <Route path='/lectures-edit' element={<EditLecture/>}></Route>
-            <Route path='/quizzes-create' element={<ReactQuizForm/>}></Route>
-            <Route path='/quizzes-display' element={<Quizzes/>}></Route>
-            <Route path='/drag-and-drop-create' element={<DragNdrop/>}> </Route>
-            <Route path='/single-lecture-display' element={<SingleLectureDisplay/>}> </Route>
-          </Routes>
-      </div>
+   <>
+    <div className="App">
+              <ReactBootstrapNavbar/>
+              
+        </div>
+        <Routes>
+        <Route path='/home' element={<Home/>}></Route>
+        <Route path='/lectures-create' element={<LectureForm/>}></Route>
+        <Route path='/lectures-display' element={<Lectures/>}></Route>
+        <Route path='/lectures-edit' element={<EditLecture/>}></Route>
+        <Route path='/quizzes-create' element={<ReactQuizForm/>}></Route>
+        <Route path='/quizzes-display' element={<Quizzes/>}></Route>
+        <Route path='/drag-and-drop-create' element={<DragNdrop/>}> </Route>
+        <Route path='/single-lecture-display' element={<SingleLectureDisplay/>}> </Route>
+      </Routes>
+   </>
+      
       
       
     

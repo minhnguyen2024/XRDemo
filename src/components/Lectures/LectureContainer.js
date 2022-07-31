@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import LectureForm from './LectureForm'
 import LectureDisplay from './LectureDisplay'
 
 const LectureContainer = () =>{
