@@ -100,7 +100,7 @@ class ReactQuizForm extends React.Component{
       var potentialAnswers = this.state.potentialAnswers
       var correctAnswer = this.state.correctAnswer
       var indexOfCorrectanswer = this.state.indexOfCorrectAnswer
-      fetch('http://localhost:8001/quizColection',{
+      fetch('http://localhost:8001/quizCollection',{
       method: "POST",
       headers: {"Content-type": "application/json"},
       body:JSON.stringify({ 
