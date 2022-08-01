@@ -9,6 +9,7 @@ import DragNdrop from './components/DragNDrop/DragNDrop';
 import ReactBootstrapNavbar from './components/Navbar/ReactBootstrapNavbar';
 import SingleLectureDisplay from './components/Lectures/SingleLectureDisplay';
 import EditLecture from './components/Lectures/EditLecture';
+import AllQuizzes from './components/QuizForm/AllQuizzes';
 
 function App() {
 
@@ -25,7 +26,9 @@ function App() {
         <Route path='/lectures-edit' element={<EditLecture/>}></Route>
         <Route path='/quizzes-create' element={<ReactQuizForm/>}></Route>
         <Route path='/quizzes-display' element={<Quizzes/>}></Route>
-        <Route path='/drag-and-drop-create' element={<DragNdrop/>}> </Route>
+        <Route path='/quizzes-all-display' element={<AllQuizzes/>}></Route>
+
+        {/* <Route path='/drag-and-drop-create' element={<DragNdrop/>}> </Route> */}
         <Route path='/single-lecture-display' element={<SingleLectureDisplay/>}> </Route>
       </Routes>
    </>

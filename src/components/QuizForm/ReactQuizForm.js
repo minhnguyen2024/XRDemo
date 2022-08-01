@@ -119,15 +119,20 @@ class ReactQuizForm extends React.Component{
          <form noValidate autoComplete='off' onSubmit={this.handleSubmit}>
             <TextField label='Quiz ID'  onChange={this.handleQuizIDChange} ></TextField> 
             <TextField label='Quiz Question' multiline rows={4} fullWidth onChange={this.handleQuizQuestionChange} ></TextField> 
-            <TextField placeholder="Answer0" onChange={this.handlePotentialAnswer0Change} ></TextField><br/>
-            <TextField placeholder="Answer1" onChange={this.handlePotentialAnswer1Change} ></TextField><br/>
-            <TextField placeholder="Answer2" onChange={this.handlePotentialAnswer2Change} ></TextField><br/>
-            <TextField placeholder="Answer3" onChange={this.handlePotentialAnswer3Change} ></TextField><br/>
+            
+            
             <RadioGroup onChange={this.handleRadioChange}>
-              <FormControlLabel control={<Radio/>} value={this.state.ans0} label={this.state.ans0}></FormControlLabel>
-              <FormControlLabel control={<Radio/>} value={this.state.ans1} label={this.state.ans1}></FormControlLabel>
-              <FormControlLabel control={<Radio/>} value={this.state.ans2} label={this.state.ans2}></FormControlLabel>
-              <FormControlLabel control={<Radio/>} value={this.state.ans3} label={this.state.ans3}></FormControlLabel>
+              <TextField placeholder="Answer0" onChange={this.handlePotentialAnswer0Change} ></TextField>
+              <FormControlLabel control={<Radio/>} value={this.state.ans0} label={this.state.ans0} name='radio'></FormControlLabel>
+
+              <TextField placeholder="Answer1" onChange={this.handlePotentialAnswer1Change} ></TextField><br/>
+              <FormControlLabel control={<Radio/>} value={this.state.ans1} label={this.state.ans1} name='radio'></FormControlLabel>
+
+              <TextField placeholder="Answer2" onChange={this.handlePotentialAnswer2Change} ></TextField><br/>
+              <FormControlLabel control={<Radio/>} value={this.state.ans2} label={this.state.ans2} name='radio'></FormControlLabel>
+
+              <TextField placeholder="Answer3" onChange={this.handlePotentialAnswer3Change} ></TextField><br/>
+              <FormControlLabel control={<Radio/>} value={this.state.ans3} label={this.state.ans3} name='radio'></FormControlLabel>
             </RadioGroup>
             <Button type="submit">Save</Button>
         </form>

@@ -2,6 +2,7 @@ import React ,  {useState, useEffect} from 'react'
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import '../Lectures/Lectures.css'
+import { Input } from '@mui/material';
 
 
 const LectureDisplay = (props) =>{
@@ -34,13 +35,13 @@ const LectureDisplay = (props) =>{
     return (<div>
         <h1>View Lecture</h1>
      
-        <input type='text' onChange={handleSearchValueChange} value={searchValue}></input>
+        <Input type='text'  fullWidth className='searchBar' onChange={handleSearchValueChange} value={searchValue} placeholder="Search by ID"></Input>
         {shouldDisplayButton && <button onClick={handleClearClick}>Clear</button>}
        
         {
             filteredLectures.map((lecture)=>{
                 return (
-                    <Card style={{ width: '40rem' }} className="card" key={lecture.id}>
+                    <Card className="card" key={lecture.id}>
                         <Card.Body>
                             <Card.Subtitle>
                                 <p>{lecture.lectureID}</p>

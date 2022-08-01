@@ -60,11 +60,13 @@ class LectureForm extends React.Component{
       
     render(){
         return(<div>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="lecture-form">
             <TextField label='Lecture ID' onChange={this.handleLectureIDChange}></TextField><br/>
                 <TextField label='Lecture Title' fullWidth onChange={this.handleTitleChange}></TextField><br/>
                 <TextField label='Lecture Content' multiline fullWidth rows={10} onChange={this.handleContentChange}></TextField> 
-                <Button className='btn btn-primary' type='submit'>Save Lecture</Button>
+                <Button className='btn btn-primary'
+    
+                 type='submit'>Save Lecture</Button>
             </form>
         </div>)
     }

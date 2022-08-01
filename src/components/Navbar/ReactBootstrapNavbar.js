@@ -3,10 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react'
+
+import './Navbar.css'
 export default function ReactBootstrapNavbar(){
     return(
 
-        <Navbar>
+        <Navbar className='navbar'>
             <Container>
                 <Nav>
                     <Nav.Link href='/home'>Home</Nav.Link>
@@ -21,6 +23,7 @@ export default function ReactBootstrapNavbar(){
                     <NavDropdown title="Quiz">
                         <NavDropdown.Item href='/quizzes-create'>New Quiz</NavDropdown.Item>
                         <NavDropdown.Item href='/quizzes-display'>View Quizzes</NavDropdown.Item>
+                        <NavDropdown.Item href='/quizzes-all-display'>View All Quizzes</NavDropdown.Item>
                     </NavDropdown>
                     
                 </Nav>
