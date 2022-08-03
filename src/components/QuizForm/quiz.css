@@ -1,0 +1,15 @@
+
+body{
+    background-color: aquamarine;
+}
+
+
+.button{
+    justify-content: center;
+    align-items: center;   
+}
+
+.nav-button{
+    padding: 12px 26px;
+    text-align: center;
+}

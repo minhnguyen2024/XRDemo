@@ -16,12 +16,17 @@
     
 }
 
-.button{
-    
-      }
 
 .lecture-form{
     padding: 12px 26px;
+    border: 1px solid black;
 }
 
+.edit-lecture-search{
+    padding: 12px 26px;
+}
 
+.edit-lecture-form{
+    padding: 12px 26px;
+    border: 1px solid black;
+}

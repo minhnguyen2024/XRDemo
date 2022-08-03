@@ -5,7 +5,7 @@
       "quizQuestion": "What is the color of the sky?",
       "potentialAnswers": [
         "Red",
-        "Yellow",
+        "Purple",
         "Blue",
         "Green"
       ],
@@ -19,8 +19,8 @@
       "potentialAnswers": [
         "Gray",
         "Yellow",
-        "Blue",
-        "Green"
+        "Black",
+        "Orange"
       ],
       "correctAnswer": "Yellow",
       "indexOfCorrectanswer": 1,
@@ -30,12 +30,12 @@
       "quizID": "day1",
       "quizQuestion": "What is addition",
       "potentialAnswers": [
-        "add",
-        "subtract",
-        "divide",
-        "multiply"
+        "Add",
+        "Subtract",
+        "Divide",
+        "Multiply"
       ],
-      "correctAnswer": "add",
+      "correctAnswer": "Add",
       "indexOfCorrectanswer": 0,
       "id": 3
     },
@@ -43,27 +43,14 @@
       "quizID": "quiz1",
       "quizQuestion": "What is division",
       "potentialAnswers": [
-        "add",
-        "divide",
-        "subtract",
-        "plus"
+        "Fraction",
+        "Divide",
+        "Lambda",
+        "Integration"
       ],
-      "correctAnswer": "divide",
+      "correctAnswer": "Divide",
       "indexOfCorrectanswer": 0,
       "id": 4
-    },
-    {
-      "quizID": "day90",
-      "quizQuestion": "hello",
-      "potentialAnswers": [
-        "saklndlklma",
-        "kasdlldam",
-        "dalksd",
-        "akdsaldlka"
-      ],
-      "correctAnswer": "akdsaldlka",
-      "indexOfCorrectanswer": 0,
-      "id": 5
     }
   ]
 }

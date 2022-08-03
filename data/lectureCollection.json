@@ -35,6 +35,12 @@
       "lectureTitle": "Test",
       "lectureContent": "This is Test",
       "id": 8
+    },
+    {
+      "lectureID": "day1",
+      "lectureTitle": "Addition as COUNTING",
+      "lectureContent": "Here is how we would approach all addition problems if\nwe are thinking about addition as counting.\n\nThe following has a specific meaning:\n12 + 23 = 35\n\nCounting with whole numbers means counting all\nthe ones (units):\n[1+1+1+1+1+1+1+1+1+1+1+1] + [1+1+1+1+1+1+1+1\n+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1] = 35\n\nOr you can count quicker by using place values:\n[10+2] + [10+10+3] = 10+10+10+3+2 = 35",
+      "id": 9
     }
   ]
 }

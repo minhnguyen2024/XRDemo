@@ -1,7 +1,7 @@
-
 import React, {useState, useEffect} from 'react'
-
-
+import { TextField } from '@mui/material'
+import { Typography, Input } from '@mui/material';
+import  Button  from 'react-bootstrap/Button';
 
 const EditLecture =(props)=>{
     const[lectures, setLectures] = useState([])
@@ -13,7 +13,6 @@ const EditLecture =(props)=>{
     const [editTitle, setEditTitle] = useState('')
     const [editContent, setEditContent] = useState('')
     
-
     const [wantedID, setWantedID] = useState('')
     const [searchValue, setSearchValue] = useState('')
 
@@ -21,8 +20,6 @@ const EditLecture =(props)=>{
     const [wantedLecture, setWantedLecture] = useState({})
 
     const shouldDisplayButton = searchValue.length > 0;
-
-    const [id, setID] = useState('')
 
     const handleWantedIDChange = (event) =>{
         setWantedID(event.target.value)
@@ -37,15 +34,8 @@ const EditLecture =(props)=>{
             // console.log("wantedID ",wantedID)
             return lecture.lectureID.includes(wantedID)
         })
-
-        console.log("temp ",temp)
-
         setWantedLectures(temp)
-
         setWantedLecture(wantedLectures[0])
-        // console.log("wantedLectures ",wantedLectures)
-        // console.log("wantedLecture ",wantedLecture)
-        // setID(wantedID)
     }
 
 
@@ -68,13 +58,9 @@ const EditLecture =(props)=>{
 
     const handleEditSubmit = (event) =>{
         event.preventDefault()
-
         var id = wantedLectures[0].id
-
         let lectureToBeEditted = wantedLectures[0]
- 
         var lectureID = lectureToBeEditted.lectureID
-        console.log("editID", lectureID)
         var lectureTitle = editTitle
         var lectureContent = editContent
         var url = 'http://localhost:8004/lectureCollection/' + id
@@ -93,35 +79,38 @@ const EditLecture =(props)=>{
     return (<div>
         <h1>Edit Lecture</h1>
 
-        <form onSubmit={handleWantedIDSubmit}>
-            <input type='text' onChange={handleWantedIDChange} placeholder="Search by ID" value={wantedID}></input>
-            <button>Submit</button>
+        <form onSubmit={handleWantedIDSubmit} className='edit-lecture-search'>
+            <Input type='text' onChange={handleWantedIDChange} placeholder="Search by ID" value={wantedID}></Input>
+            <Button type='submit'>Submit</Button>
         </form>
 
-        {shouldDisplayButton && <button onClick={handleClearClick}>Clear</button>}
+        {shouldDisplayButton && <Button onClick={handleClearClick}>Clear</Button>}
         {
             wantedLectures.map((wantedLecture) =>{
                 return (<div>
-                    <input value={wantedLecture.lectureID} onChange={handleWantedIDChange}></input>
-
-                    <h2>{wantedLecture.lectureID}</h2>
-                    <h2>{wantedLecture.lectureTitle}</h2>
-                    <p>{wantedLecture.lectureContent}</p>
-
+                    <Typography variant='subtitle1' align='center'>Lecture ID: {wantedLecture.lectureID}</Typography>
+                    <Typography variant='h4' align='center' >{wantedLecture.lectureTitle}</Typography>
+                    <Typography variant='body1' align='center' >{wantedLecture.lectureContent}</Typography>
                 </div>)
-                
             })
         }
 
-
-       
-        <form onSubmit={handleEditSubmit}>
-                {/* <input type='text' onChange={handleEditIDChange} placeholder='Edit ID'></input><br/> */}
-                <input type='text' onChange={handleEditTitleChange} placeholder="Edit Title"></input><br/>
-                <textarea type='text' onChange={handleEditContentChange} placeholder="Edit Content"></textarea><br/>
-                <button type='submit'>Save Edit</button><br/>
+        <form onSubmit={handleEditSubmit} className='edit-lecture-form'>
+                <Input 
+                    type='text' 
+                    onChange={handleEditTitleChange} 
+                    placeholder="Edit Title">
+                </Input><br/>
+                <TextField 
+                    type='text' 
+                    onChange={handleEditContentChange} 
+                    placeholder="Edit Content" 
+                    multiline
+                    fullWidth 
+                    rows={10}>
+                </TextField><br/>
+                <Button type='submit'>Save Edit</Button><br/>
         </form>
-     
     </div>)
 }
 
