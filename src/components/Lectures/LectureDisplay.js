@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            LectureDisplay.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
 import React ,  {useState, useEffect} from 'react'
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';

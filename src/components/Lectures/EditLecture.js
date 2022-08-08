@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            EditLecture.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
 import React, {useState, useEffect} from 'react'
 import { TextField } from '@mui/material'
 import { Typography, Input } from '@mui/material';

@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            AllQuizzes.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
 import React, {useState, useEffect} from 'react'
 import ReactDisplayQuiz from './ReactDisplayQuiz'
 

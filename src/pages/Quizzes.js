@@ -1,7 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            Quizzes.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
+
 import QuizContainer from "../components/QuizForm/QuizContainer"
 import React from "react"
-import QuizWrapper from "../components/QuizForm/QuizWrapper"
-
 
 const Quizzes = () =>{
     return <div>

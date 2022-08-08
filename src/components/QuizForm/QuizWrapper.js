@@ -1,7 +1,12 @@
-
+////////////////////////////////////////////////////////////////////////////////
+// File:            QuizWrapper.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
 import QuizContainer from './QuizContainer'
 import React, {useState, useEffect} from 'react'
-import { render } from '@testing-library/react'
+
 
 class QuizWrapper extends React.Component{
 
@@ -11,22 +16,6 @@ class QuizWrapper extends React.Component{
             quizzes: []
         }
     }
-    // const [quizzes, setQuizzes] = useState([])
-
-    // useEffect(()=>{
-    //     fetch('http://localhost:8001/quizCollection').then(res => res.json()).then(data => setQuizzes(data))
-    // }, [])   
-
-    // ComponentWillMount(){
-    //     fetch('http://localhost:8001/quizCollection').then(res => res.json()).then(data => 
-    //     this.setState(()=>{
-    //         return{
-    //           quizzes: data
-    //         }
-    //       })
-    //     )
-    // }
-
     render(){
         return (
             <div>

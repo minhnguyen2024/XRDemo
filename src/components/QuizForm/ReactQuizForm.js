@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            ReactQuizForm.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
 import React from "react";
 import Button from '@mui/material/Button';
 import { FormControlLabel, Radio, TextField } from '@mui/material';

@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            ReactDisplayQuiz.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
+
 import React, {useState, useEffect}from 'react'
 import { FormControlLabel, Radio, FormControl, RadioGroup, Button } from '@mui/material';
 import Card from 'react-bootstrap/Card';
@@ -10,19 +17,10 @@ const ReactDisplayQuiz = (props) =>{
 
     const [isCorrect, setIsCorrect] = useState(false)
 
-    // if (isCorrect){
-    //     setHelperText('Choose wisely')
-    // } else{
-    //     setHelperText('Choose wisely')
-
-    // }
     useEffect(() => {
-        // Anything in here is fired on component mount.
         console.log('useEffect')
         setHelperText('Choose wisely')
-
         return () => {
-            // Anything in here is fired on component unmount.
             setHelperText('Choose wisely')
             console.log('useEffect')
         }

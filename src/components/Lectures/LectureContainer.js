@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            LectureContainer.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
 import React, {useEffect, useState} from 'react'
 import LectureDisplay from './LectureDisplay'
 

@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            LectureForm.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
+
 import React from 'react'
 import {TextField} from '@mui/material';
 import Button from 'react-bootstrap/Button';

@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:            QuizContainer.js
+// Authors:         Minh Nguyen
+// Acknowledgments: None
+// Contacts:        minhnguyen_2024@depauw.edu
+////////////////////////////////////////////////////////////////////////////////
+
 import React, {useState, useEffect, useLayoutEffect} from 'react'
 import ReactDisplayQuiz from './ReactDisplayQuiz'
 import Button from 'react-bootstrap/Button';
